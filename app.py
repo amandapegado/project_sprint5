@@ -2,18 +2,18 @@ import streamlit as st
 import pandas as pd
 import plotly.express as px
 
-# Cabeçalho da aplicação
-st.header('Visualizações de vendas de carros')
+# Cabeçalho da Aplicação
+st.header('Vendas de Carros')
 
 # Lendo os dados
 car_data = pd.read_csv('vehicles.csv')
 
-# Criar botões com chaves únicas
+# Criar botão
 hist_button = st.button('Criar histograma', key='hist_button')
 
 scatter_button = st.button('Criar gráfico de dispersão', key='scatter_button')
 
-# Ação ao clicar no primeiro botão de histograma
+# Ação ao clicar no botão de histograma
 if hist_button:
     st.write(
         'Criando um histograma para o conjunto de dados de anúncios de vendas de carros')
@@ -29,7 +29,7 @@ if scatter_button:
                      title="Dispersão de Preço vs Odômetro")
     st.plotly_chart(fig, use_container_width=True)
 
-# Criar caixas de seleção com chaves únicas
+# Criar caixas de seleção
 hist_checkbox = st.checkbox('Criar histograma', key='hist_checkbox')
 scatter_checkbox = st.checkbox(
     'Criar gráfico de dispersão', key='scatter_checkbox')
